@@ -100,7 +100,7 @@ func (self *Service) attrs(full bool) nlgo.AttrSlice {
 			nlattr(IPVS_SVC_ATTR_AF, nlgo.U16(self.AddressFamily)),
 			nlattr(IPVS_SVC_ATTR_FWMARK, nlgo.U32(self.FWMark)),
 		)
-	} else if self.Protocol != 0 && self.Address != nil && self.Port != 0 {
+	} else if self.Protocol != 0 && self.Address != nil {
 		attrs = append(attrs,
 			nlattr(IPVS_SVC_ATTR_AF, nlgo.U16(self.AddressFamily)),
 			nlattr(IPVS_SVC_ATTR_PROTOCOL, nlgo.U16(self.Protocol)),
